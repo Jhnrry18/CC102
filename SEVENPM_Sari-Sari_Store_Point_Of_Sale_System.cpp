@@ -2,43 +2,79 @@
 
 using namespace std;
 
-int main ()
+int main()
 {
-	float sugarPriceUSD = 21.14, ricePricePound = 24.13, sardinesPricePound = 47.07,  coffeePriceUSD = 5.58, milkPriceUSD = 4.021, pound = 73.74, PHP = 0;
-	float usdToPhp, poundToPhp, totalCostPhp;
-	int sugarQty, riceQty, sardinesQty, coffeeQty, milkQty;
+	int sugarPriceUSD, ricePricePound, sardinesPricePound, coffeePriceUSD, milkPriceUSD;
+	int sugarCostPhp, riceCostPhp, sardinesCostPhp, coffeeCostPhp, milkCostPhp;
+	int sugarQty, riceQty, saridnesQty, coffeeQty, milkQty;
+    float totalCostPhp;
+	float usdToPhp, poundToPhp;
 	
-	const float USD = 56;
-	cout << "Enter the quantity of sugar\n";
+	//Item price 
+	cout << "Sugar price\t\t:\t";
+	cin >> sugarPriceUSD;
+	cout << "Rice price\t\t:\t";
+	cin >> ricePricePound;
+	cout << "Sardines price\t\t:\t";
+	cin >> sardinesPricePound;
+	cout << "Coffee price\t\t:\t";
+	cin >> coffeePriceUSD;
+	cout << "Milk price\t\t:\t";
+	cin >> milkPriceUSD;
+	cout << "\n";
+	
+	//Item Quantity
+	cout << "Sugar quantity\t\t:\t";
 	cin >> sugarQty;
-	cout << "Enter the quantity of rice\n";
+	cout << "Rice quantity\t\t:\t";
 	cin >> riceQty;
-	cout << "Enter the quantity of sardines\n";
-	cin >> sardinesQty;
-	cout << "Enter the quantity of coffee\n";
+	cout << "Sardines quantity\t:\t";
+	cin >> saridnesQty;
+	cout << "Coffee quantity\t\t:\t";
 	cin >> coffeeQty;
-	cout << "Enter the quantity of milk\n";
+	cout << "Milk quantity\t\t:\t";
 	cin >> milkQty;
 	cout << "\n";
 	
-	//Currency COnversion
-	usdToPhp =  USD * PHP;
-	poundToPhp = pound * PHP;
-
-	cout << "\n";
+	//Currency conversion
 	
-	cout << "Price of sugar in PHP\n";
+	cout << "Dollar to Peso\t\t:\t";
+	cin >> usdToPhp;
+	cout << "Pound to Peso\t\t:\t";
+	cin >> poundToPhp;
 	
-	cout << "Price of rice in PHP\n";
+	// Item price in php
+	sugarCostPhp = (sugarPriceUSD * sugarQty) * usdToPhp;
+	riceCostPhp = (ricePricePound * riceQty) * poundToPhp;
+	sardinesCostPhp = (sardinesPricePound * saridnesQty) * poundToPhp;
+	coffeeCostPhp = (coffeePriceUSD * coffeeQty) * usdToPhp;
+	milkCostPhp = (milkPriceUSD * milkQty) * usdToPhp;
 	
-	cout << "Price of sardines in PHP\n";
+	totalCostPhp = sugarCostPhp + riceCostPhp + sardinesCostPhp + coffeeCostPhp + milkCostPhp;
 	
-	cout << "Price of coffee in php\n";
+	//Item name
+	cout << "Sugar\n";
+	cout << "Rice\n";
+	cout << "Sardines\n";
+	cout << "Coffee\n";
+	cout << "Milk\n";
 	
+	//Item quantity
+	cout << "Sugar =\t\t\t:\t " << sugarQty << "\n";
+	cout << "Rice =\t\t\t:\t " << riceQty << "\n";
+	cout << "Sardines =\t\t:\t " << saridnesQty << "\n";
+	cout << "Coffee =\t\t:\t " << coffeeQty << "\n";
+	cout << "Milk =\t\t\t:\t " << milkQty << "\n";
 	
+	//Item price per item
+	cout << "Sugar\t\t\t:\t" << sugarPriceUSD * usdToPhp << "\n";
+	cout << "Rice\t\t\t:\t" << ricePricePound * poundToPhp << "\n";
+	cout << "Sardines\t\t:\t" << sardinesPricePound * poundToPhp << "\n";
+	cout << "Coffee\t\t\t:\t" << coffeePriceUSD * usdToPhp << "\n";
+	cout << "milk\t\t\t:\t" << milkPriceUSD * usdToPhp << "\n";
 	
-	cout << "The total cost";
-	cin >> totalCostPhp;
+	//Item total cost
+	cout << "Total cost of all item\t:\t" << totalCostPhp;
 	
 	return 0;
 	
